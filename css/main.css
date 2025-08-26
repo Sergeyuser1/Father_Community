@@ -1,0 +1,437 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-Medium.woff2') format('woff2');
+    font-weight: medium;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl
+):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Убираем скачок интерфейса по горизонтали
+    при появлении / исчезновении скроллбара
+   */
+  scrollbar-gutter: stable;
+}
+
+/**
+  Плавный скролл
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут fill со значением 'none' или начинается с 'url')
+ */
+:where([fill]:not(
+  [fill="none"],
+  [fill^="url"]
+)) {
+  fill: currentColor;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут stroke со значением 'none')
+ */
+:where([stroke]:not(
+  [stroke="none"],
+  [stroke^="url"]
+)) {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+    --color-black: #000000;
+    --color-lightgray: #D9D9D9;
+    --color-gray: #929292;
+    --color-green: #7CA137;
+    --color-white: #FFFFFF;
+
+    --border-radius: 20px;
+
+    --font-family-base: 'Montserrat', sans-serif;
+
+    --transition-duration: 0.2s;
+}
+
+body {
+    font-family: var(--font-family-base);
+    max-width: 1920px;
+    max-height: 1080px;
+}
+
+.header {
+    background-color: var(--color-white);    
+    height: 130px;    
+    display: block;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo-image {
+    max-width: 100%;
+    height: auto;  
+    margin: 10px auto auto;
+}
+
+.mainSection {
+    height: 950px;
+    
+    background-image: url('/image/backgroundImage.png');
+}
+
+.mainSetDiv {
+   
+    display: flex;
+    height: 950px;
+   
+    
+
+}
+
+.left {
+     height: 730px;
+     width: 255px;
+     margin:  auto 50px auto 0;
+     display: flex;
+     flex-wrap: wrap;
+     align-content: space-between;
+}
+
+.upBoard {
+    height: 436px;
+    width: 100%;
+    background-color: var(--color-gray);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 38px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.upBoard a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 600;
+    margin: auto 0;
+    font-size: 13px;
+
+}
+
+
+
+.downBoard {
+    height: 70px;
+    width: 100%;
+    background-color: var(--color-gray);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    
+}
+.downBoard a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 800;
+    padding-right: 28px;
+    font-size: 24px;
+}
+
+
+.center {
+     height: 730px;
+     width: 1000px;
+     margin: auto 25px auto 0;
+     background-color: var(--color-white);
+     border-radius: var(--border-radius);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 35px 42px auto;
+}
+
+.divPayType {
+    display: flex;
+    width: 915px;
+   justify-content: space-evenly;
+}
+
+.PayType {
+    height: 82px;
+    width: 440px;
+    background-color: var(--color-lightgray);
+    border-radius: var(--border-radius);    
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.PayType:first-child {
+    background-color: var(--color-black);
+    
+    
+}
+.PayType:first-child p {
+color: var(--color-white); 
+}
+
+
+.PayType p {
+    color: var(--color-black);
+    font-weight: 800;
+    padding-right: 28px;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.right {
+    height: 730px;
+     width: 450px;
+     margin: auto 0;
+     background-color: var(--color-white);
+     border-radius: var(--border-radius);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     padding-top: 30px;
+     padding-bottom: 30px;
+
+}
+
+.right .divText {
+    height: 270px;
+    width: 347px;
+    color: var(--color-black);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.right .divText p:nth-child(odd){
+    font-weight: 800;
+}
+
+.right .btn {
+    background-color: var(--color-green);
+    border-radius: var(--border-radius);
+    height: 137px;
+    width: 405px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 18px;
+
+
+}
+
+.right .btn a {
+text-decoration: none;
+    color: var(--color-white);
+    font-weight: 800;    
+    font-size: 30px;
+    text-transform: uppercase;
+}
