@@ -533,10 +533,20 @@ height: 300px;
 width: 468px;
 border: var(--color-black) solid 5px;
 border-radius: var(--border-radius);
-padding: 15px;
+padding: 20px;
 display: inline-flex;
 flex-direction: column;
-
+}
+.cardField{
+  background-color: #1F1F1F;
+  border-radius: var(--border-radius);
+  height: 55px;
+  width: 400px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+  border: none;
+  color: var(--color-white);
 }
 
 .ico {
@@ -547,26 +557,11 @@ justify-content: flex-end
   height: 47px;
 }
 
-.cardField{
-  background-color: #1F1F1F;
-  border-radius: var(--border-radius);
-  height: 55px;
-  width: 400px;
-  margin-bottom: 40px;
-  margin-top: 10px;
-}
+.creditCard p{
+margin: 0;
+font-size: 20px;
+font-weight: 600;
 
-
-.lasted  {
-   width: 130px;
-}
-.cwc  {
-   width: 130px;
-   margin-left: 65px;
-}
-
-.number{
-margin-top: 20px;
 }
 
 .footerCard{
@@ -577,6 +572,36 @@ margin-top: 20px;
 .footerCard div {
   display: flex;
 }
+
+.expiry{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+
+.lasted  {
+   width: 130px;
+   padding-left: 10px;
+}
+
+.cvc{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 130px;
+  
+}
+.cvc p{
+  margin-left: 65px;
+}
+.cwc  {
+   width: 130px;
+   margin-left: 65px;
+   padding-left: 10px;
+}
+
+
+
 
 .right {
     height: 730px;
