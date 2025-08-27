@@ -255,7 +255,7 @@ body {
 
 .header {
     background-color: var(--color-white);    
-    height: 130px;    
+    height: 14vh;    
     display: block;
 }
 
@@ -272,16 +272,17 @@ body {
 }
 
 .mainSection {
-    height: 950px;
+    height: 86vh;
     
     background-image: url('/image/backgroundImage.png');
+    display: flex;
 }
 
 .mainSetDiv {
    
     display: flex;
-    height: 950px;
-   
+    /*height: 950px;
+   */
     
 
 }
@@ -356,8 +357,9 @@ body {
 .divPayType {
     display: flex;
     width: 915px;
-   justify-content: space-evenly;
+   justify-content: space-between;
 }
+
 
 .PayType {
     height: 82px;
@@ -385,6 +387,195 @@ color: var(--color-white);
     padding-right: 28px;
     font-size: 36px;
     text-transform: uppercase;
+}
+
+hr {
+    width: 915px;
+    border-top: 2px solid #2B2B2B;
+    margin: 20px 0; 
+}
+
+.divSummGift {
+    padding: 12px 0;
+    display: flex;
+    justify-content: flex-start;
+    width: 915px;
+}
+
+.divSummGift p{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.divSumm {
+  display: flex;
+  width: 915px;
+  justify-content: space-between;
+  
+}
+
+.Summ {
+  background-color: var(--color-lightgray);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 72px;
+ 
+}
+.Summ a {
+  text-decoration: none;
+    color: var(--color-black);
+    font-weight: 800;
+    padding: 0 50px;
+    font-size: 24px;
+}
+
+.Summ:last-child a {
+ 
+    color: var(--color-gray);
+    
+}
+
+.emailLabel {
+  margin: 20px 0 12px;
+  display: flex;
+  width: 915px;
+  
+ }
+
+ .emailLabel p {
+    font-size: 20px;
+    font-weight: 800;
+    
+}
+
+.downDiv {
+  width: 915px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.leftBlock {
+  width: 373px;
+  height: 279px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.emailTextBox {
+  background-color: var(--color-lightgray);
+  width: 373px;
+  height: 63px;
+  border: none;
+  border-radius: var(--border-radius);
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.divChehck {
+display: flex;
+
+}
+.divChehck {
+font-size: 20px;
+font-weight: 600;
+}
+.divChehck a {
+  color: var(--color-blue);
+  text-decoration: none; 
+  font-weight: 800;
+}
+
+  /* Скрываем оригинальный чекбокс */
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+/* Стилизация метки и создание псевдоэлемента для кастомного чекбокса */
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+/* Создаем кастомный чекбокс */
+.custom-checkbox + label::before {
+  content: '';
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 10PX;  
+  background-color: var(--color-black);
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+/* Стили для отмеченного чекбокса */
+.custom-checkbox:checked + label::before {
+  border-color:var(--color-black);
+  background-color: var(--color-black);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+/* Стили для disabled состояния */
+.custom-checkbox:disabled + label::before {
+  background-color: #e9ecef;
+}
+
+.creditCard {
+height: 300px;
+width: 468px;
+border: var(--color-black) solid 5px;
+border-radius: var(--border-radius);
+padding: 15px;
+display: inline-flex;
+flex-direction: column;
+
+}
+
+.ico {
+display: flex;
+justify-content: flex-end
+}
+.ico img {
+  height: 47px;
+}
+
+.cardField{
+  background-color: #1F1F1F;
+  border-radius: var(--border-radius);
+  height: 55px;
+  width: 400px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+
+.lasted  {
+   width: 130px;
+}
+.cwc  {
+   width: 130px;
+   margin-left: 65px;
+}
+
+.number{
+margin-top: 20px;
+}
+
+.footerCard{
+  display: flex;
+  
+}
+
+.footerCard div {
+  display: flex;
 }
 
 .right {

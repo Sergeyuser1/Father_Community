@@ -30,25 +30,28 @@
                 <div class="PayType"><p>сбп</p></div>
             </div>
             <hr>
-            <p>Сумма пожертвования</p>
+            <div class="divSummGift"><p>Сумма пожертвования</p></div>
             <div class="divSumm">
                 <div class="Summ"><a href="/">5 000</a></div>
                 <div class="Summ"><a href="/">10 000</a></div>
                 <div class="Summ"><a href="/">15 000</a></div>
                 <div class="Summ"><a href="/">другая сумма</a></div>
             </div>
-            <p>Электронная почта</p>
+            <div class="emailLabel"><p>Электронная почта</p></div>
             <div class="downDiv">
                 <div class="leftBlock">
-                    <div class="email"><input type="email" placeholder="Введите вашу почту"></div>
-                    <div class="oferta"><input type="checkbox" id="oferta"><label for="oferta">Я согласен с условиями оферты</label></div>
-                    <div class="userAgree"><input type="checkbox" id="userAgree"><label for="userAgree">Я согласен с условиями использования</label></div>
+                    <div class="email"><input type="email" placeholder="Введите вашу почту" class="emailTextBox"></div>
+                    <div class="divChehck oferta"><input type="checkbox" id="oferta" class="custom-checkbox"><label for="oferta" class="checkboxText"></label><p>Я согласен <a href="/">с условиями оферты</a></p></div>
+                    <div class="divChehck userAgree"><input type="checkbox" id="userAgree" class="custom-checkbox"><label for="userAgree" class="checkboxText"></label><p>Я согласен <a href="/">с условиями использования</a></p></div>
                 </div>
                 <div class="creditCard">
                     <div class="ico"><img src="/icons/image 7.png" alt="Credit Card Icon"></div>
-                    <div class="number"><input type="text" placeholder="Номер карты"></div>
-                    <div class="expiry"><input type="text" placeholder="MM/YY"></div>
-                    <div class="cvc"><input type="text" placeholder="CVC"></div>
+                    <div class="number"><input type="text" placeholder="Номер карты" class="cardField"></div>
+                    <div class="footerCard">
+                        <div class="expiry"><input type="text" placeholder="MM/YY" class="cardField lasted"></div>
+                        <div class="cvc"><input type="text" placeholder="CVC" class="cardField cwc"></div>
+                </div>
+                    
                 </div>
             </div>
         </div>
