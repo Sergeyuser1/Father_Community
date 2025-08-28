@@ -274,7 +274,7 @@ body {
 .mainSection {
     height: 86vh;
     
-    background-image: url('./image/backgroundImage.png');
+    background-image: url('../image/backgroundImage.png');
     display: flex;
 }
 
